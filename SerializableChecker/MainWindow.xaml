@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SerializableChecker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Serializableチェッカー" Width="300" Height="300" MinHeight="200" MinWidth="200" UseLayoutRounding="True">
+    <Grid Margin="2">
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <Button DockPanel.Dock="Right" Content="フォルダ選択" Margin="3" Click="FolderSelectButton_Click"/>
+                <TextBox x:Name="DirectoryTextBox" Margin="3"/>
+            </DockPanel>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <TextBlock Text="拡張子" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3"/>
+                <ComboBox x:Name="extCombo" IsEditable="True" Margin="3" SelectedIndex="0" Width="60" >
+                    <ComboBoxItem>cs</ComboBoxItem>
+                    <ComboBoxItem>xaml</ComboBoxItem>
+                    <ComboBoxItem>cpp</ComboBoxItem>
+                    <ComboBoxItem>h</ComboBoxItem>
+                    <ComboBoxItem>text</ComboBoxItem>
+                    <ComboBoxItem>txt</ComboBoxItem>
+                </ComboBox>                
+            </StackPanel>
+            <Button DockPanel.Dock="Top" Content="チェック開始" Margin="3" Click="StartButton_Click"/>
+            <ListBox x:Name="FileListBox" Margin="3"/>
+        </DockPanel>
     </Grid>
 </Window>
